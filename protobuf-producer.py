@@ -1,39 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-#
-# Copyright 2020 Confluent Inc.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
-#
-# This is a simple example of the SerializingProducer using protobuf.
-#
-# To regenerate Protobuf classes you must first install the protobuf
-# compiler. Once installed you may call protoc directly or use make.
-#
-# See the protocol buffer docs for instructions on installing and using protoc.
-# https://developers.google.com/protocol-buffers/docs/pythontutorial
-#
-# After installing protoc execute the following command from the examples
-# directory to regenerate the user_pb2 module.
-# `make`
-#
-import argparse
 from uuid import uuid4
-
-
-# Protobuf generated class; resides at ./user_pb2.py
 import homeAutomation_pb2
 from confluent_kafka import SerializingProducer
 from confluent_kafka.serialization import StringSerializer
@@ -89,7 +54,8 @@ def main():
     buffer_clear_count=0
     for r in reader:
         data.append(r)
-    data = data+data+data+data
+    data = data+data
+    data = data+data
     from datetime import datetime
     
     from time import sleep
@@ -156,6 +122,7 @@ def main():
         "buffer_clear_time":buffer_clear_time,
         "transfer_time_taken":actual_time_taken,
         "overall_docs_per_second":len(data)/actual_time_taken,
+        "dataset_size":sys.getsizeof(data)
     }
     header=["total_data",
             "buffer_clear_count",
