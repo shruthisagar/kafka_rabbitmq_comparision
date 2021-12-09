@@ -1,0 +1,48 @@
+2021-12-05 06:37:51.678115 Starting data transfer
+2021-12-05 06:41:46.988699 end of data transfer
+------------some stats--------------
+time taken in seconds:235.299209
+total docs: 1007822total docs per second:4283.150820111767
+
+2021-12-05 06:56:28.662185 Starting data transfer
+
+buffer got filled, clearing after:100000time taken to clear:0.038537
+buffer got filled, clearing after:200000time taken to clear:0.028645
+buffer got filled, clearing after:299980time taken to clear:0.038398
+buffer got filled, clearing after:399980time taken to clear:0.037977
+buffer got filled, clearing after:499980time taken to clear:0.0385
+buffer got filled, clearing after:599980time taken to clear:0.025784
+buffer got filled, clearing after:699978time taken to clear:0.024896
+buffer got filled, clearing after:799970time taken to clear:0.029856
+buffer got filled, clearing after:899957time taken to clear:0.030562
+buffer got filled, clearing after:999951time taken to clear:0.026557
+2021-12-05 07:00:24.018896 end of data transfer
+------------some stats--------------
+time taken in seconds:235.319514
+total docs: 1007822
+total docs per second:4282.781240148235
+time taken removing buffer clear time: 233.561475
+*******************************************
+
+
+
+time taken removing buffer clear time: 255.93246
+total docs per second:3937.843601393899
+*******************************************
+
+
+
+time taken removing buffer clear time: 267.90002000000004
+total docs per second:3761.933276451416
+
+*******************************************
+
+time taken removing buffer clear time: 177.007375
+total docs per second:5693.6723681711
+
+*******************************************
+
+time taken removing buffer clear time: 234.324918
+total docs per second:4300.959576138634
+
+*******************************************

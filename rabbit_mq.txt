@@ -1,0 +1,11 @@
+2021-12-04 11:41:51.272953 Starting data transfer
+2021-12-04 11:43:44.455880 end of data transfer
+------------some stats--------------
+time taken in seconds:113.177969
+total docs: 1007822
+total docs per second:8904.754245943395
+2021-12-05 06:09:57.505620 Starting data transfer
+2021-12-05 06:12:39.687726 end of data transfer
+------------some stats--------------
+time taken in seconds:162.179187
+total docs: 1007822total docs per second:6214.249920984003

@@ -1,0 +1,139 @@
+{
+  "namespace": "homeAutomation.avro",
+  "type": "record",
+  "name": "homeAutomation",
+  "fields": [
+    {
+      "name": "time",
+      "type": "string"
+    },
+    {
+      "name": "use",
+      "type": "string"
+    },
+    {
+      "name": "Houseoverall",
+      "type": "string"
+    },
+    {
+      "name": "Dishwasher",
+      "type": "string"
+    },
+    {
+      "name": "Furnace1",
+      "type": "string"
+    },
+    {
+      "name": "Furnace2",
+      "type": "string"
+    },
+    {
+      "name": "Homeoffice",
+      "type": "string"
+    },
+    {
+      "name": "Fridge",
+      "type": "string"
+    },
+    {
+      "name": "Winecellar",
+      "type": "string"
+    },
+    {
+      "name": "Garagedoor",
+      "type": "string"
+    }
+    ,
+    {
+      "name": "Kitchen12",
+      "type": "string"
+    },
+    {
+      "name": "Kitchen14",
+      "type": "string"
+    },
+    {
+      "name": "Kitchen38",
+      "type": "string"
+    }
+    ,
+    {
+      "name": "Barn",
+      "type": "string"
+    },
+    {
+      "name": "Well",
+      "type": "string"
+    },
+    {
+      "name": "Microwave",
+      "type": "string"
+    },
+    {
+      "name": "Livingroom",
+      "type": "string"
+    },
+    {
+      "name": "Solar",
+      "type": "string"
+    },
+    {
+      "name": "temperature",
+      "type": "string"
+    },
+    {
+      "name": "icon",
+      "type": "string"
+    },
+    {
+      "name": "humidity",
+      "type": "string"
+    },
+    {
+      "name": "visibility",
+      "type": "string"
+    },
+    {
+      "name": "summary",
+      "type": "string"
+    },
+    {
+      "name": "apparentTemperature",
+      "type": "string"
+    },
+    {
+      "name": "pressure",
+      "type": "string"
+    },
+    {
+      "name": "windSpeed",
+      "type": "string"
+    },
+    {
+      "name": "cloudCover",
+      "type": "string"
+    },
+    {
+      "name": "windBearing",
+      "type": "string"
+    },
+    {
+      "name": "precipIntensity",
+      "type": "string"
+    },
+    {
+      "name": "dewPoint",
+      "type": "string"
+    },
+    {
+      "name": "precipProbability",
+      "type": "string"
+    },
+    {
+      "name": "text_msg",
+      "type": "string"
+    }
+
+  ]
+}
+

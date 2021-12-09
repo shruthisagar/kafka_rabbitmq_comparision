@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+message HomeAutomation {
+    string time = 1;
+    string use = 2;
+    string gen = 3;
+    string Houseoverall = 4;
+    string Dishwasher = 5;
+    string Furnace1 = 6;
+    string Furnace2 = 7;
+    string Homeoffice = 8;
+    string Fridge = 9;
+    string Winecellar = 10;
+    string Garagedoor = 11;
+    string Kitchen12 = 12;
+    string Kitchen14 = 13;
+    string Kitchen38 = 14;
+    string Barn = 15;
+    string Well = 16;
+    string Microwave = 17;
+    string Livingroom = 18;
+    string Solar = 19;
+    string temperature = 20;
+    string icon = 21;
+    string humidity = 22;
+    string visibility = 23;
+    string summary = 24;
+    string apparentTemperature = 25;
+    string pressure = 26;
+    string windSpeed = 27;
+    string cloudCover = 28;
+    string windBearing = 29;
+    string precipIntensity = 30;
+    string dewPoint = 31;
+    string precipProbability = 32;
+    string text_msg = 33;
+}

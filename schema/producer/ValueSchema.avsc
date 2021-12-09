@@ -1,0 +1,263 @@
+{
+  "namespace": "homeAutomation.avro",
+  "type": "record",
+  "name": "homeAutomation",
+  "fields": [
+    {
+      "name": "time",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "use",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Houseoverall",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Dishwasher",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Furnace1",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Furnace2",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Homeoffice",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Fridge",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Winecellar",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Garagedoor",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Kitchen12",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Kitchen14",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Kitchen38",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Barn",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Well",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Microwave",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Livingroom",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "Solar",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "temperature",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "icon",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "humidity",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "visibility",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "summary",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "apparentTemperature",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "pressure",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "windSpeed",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "cloudCover",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "windBearing",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "precipIntensity",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "dewPoint",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "precipProbability",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    },
+    {
+      "name": "text_msg",
+      "type": [
+        "string",
+        "int",
+        "null"
+      ]
+    }
+  ]
+}
