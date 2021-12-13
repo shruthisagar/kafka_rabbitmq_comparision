@@ -196,7 +196,7 @@ def main():
     buffer_clear_count=0
     for r in reader:
         data.append(r)
-    data = data[:100]
+    # data = data[:100000]
     print("starting")
     from datetime import datetime
     

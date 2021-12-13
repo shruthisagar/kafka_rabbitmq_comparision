@@ -2,8 +2,8 @@ import pika
 import json, os
 connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 channel = connection.channel()
-channel.queue_delete(queue="hello")
-channel.queue_declare(queue='hello')
+channel.queue_delete(queue="homeAutomation")
+channel.queue_declare(queue='homeAutomation')
 import csv
 reader =  csv.DictReader(open('output.csv'))
 data = []
@@ -15,7 +15,7 @@ from datetime import datetime
 print("Starting data transfer")
 time_now = datetime.utcnow()
 for body in data:
-    channel.basic_publish(exchange='', routing_key='hello', body=json.dumps(body))
+    channel.basic_publish(exchange='', routing_key='homeAutomation', body=json.dumps(body))
     
 time_taken = (datetime.utcnow()-time_now).total_seconds()
 print("end of data transfer")
