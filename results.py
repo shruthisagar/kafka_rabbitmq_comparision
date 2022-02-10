@@ -22,8 +22,8 @@ plt.plot('total_data', 'overall_time_taken',  linestyle='--', marker='o',data=pr
 plt.plot('total_data', 'overall_time_taken',  linestyle='--', marker='o',data=rabbit_mq_data, label="Rabbit MQ")
 # plt.plot(np.linspace(0, 100, 25000),'overall_docs_per_second', linestyle='--', marker='o',data=rabbit_mq_data, label="Rabbit MQ Docs Per Second")
 plt.legend()
-plt.xlabel("total data")
-plt.ylabel("total time taken in seconds")
+plt.xlabel("total data (records)")
+plt.ylabel("total time taken (seconds)")
 plt.xticks(list(plt.xticks()[0]) + [3000000])
 
 # show graph

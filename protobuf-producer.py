@@ -4,32 +4,7 @@ from confluent_kafka import SerializingProducer
 from confluent_kafka.serialization import StringSerializer
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.protobuf import ProtobufSerializer
-
-
-def delivery_report(err, msg):
-    """
-    Reports the failure or success of a message delivery.
-
-    Args:
-        err (KafkaError): The error that occurred on None on success.
-
-        msg (Message): The message that was produced or failed.
-
-    Note:
-        In the delivery report callback the Message.key() and Message.value()
-        will be the binary format as encoded by any configured Serializers and
-        not the same object that was passed to produce().
-        If you wish to pass the original object(s) for key and value to delivery
-        report callback we recommend a bound callback or lambda where you pass
-        the objects along.
-
-    """
-    if err is not None:
-        print("Delivery failed for User record {}: {}".format(msg.key(), err))
-        return
-    print('User record {} successfully produced to {} [{}] at offset {}'.format(
-        msg.key(), msg.topic(), msg.partition(), msg.offset()))
-
+import sys, psutil
 
 def main():
     topic = "HomeAutomationProtoBuf"
@@ -54,15 +29,14 @@ def main():
     buffer_clear_count=0
     for r in reader:
         data.append(r)
-    data = data+data
-    data = data+data
+    data = data+data+data+data
     from datetime import datetime
     
     from time import sleep
     print("starting")
-    
+    memory_profiling = []
     time_now = datetime.utcnow()
-    for i in data:
+    for index, i in enumerate(data):
         kafka_data = homeAutomation_pb2.HomeAutomation(time=i["time"],
                 use=i["use"],
                 gen=i["gen"],
@@ -97,17 +71,34 @@ def main():
                 precipProbability=i["precipProbability"],
                 text_msg=i["text_msg"]
                 )
+        if index%1000 == 0:
+                profiling_data = psutil.virtual_memory()._asdict()
+                profiling_data['dataset'] = index
+                profiling_data['buffer_error'] = False
+                profiling_data['total_dataset'] = len(data)
+                memory_profiling.append(profiling_data)
         try:
             producer.produce(topic=topic, key=str(uuid4()), value=kafka_data)
         except Exception as error:
             clear_start_time=datetime.utcnow() 
             sleep(1)
+            profiling_data = psutil.virtual_memory()._asdict()
+            profiling_data['total_dataset'] = len(data)
+            profiling_data['dataset'] = index
+            profiling_data['buffer_error'] = True
+            memory_profiling.append(profiling_data)
             producer.poll(1)
             buffer_clear_time+= (datetime.utcnow()-clear_start_time).total_seconds()
             print(buffer_clear_time)
             buffer_clear_count+=1
             print(error, buffer_clear_count)
             producer.produce(topic=topic, key=str(uuid4()), value=kafka_data)
+    
+    profiling_data = psutil.virtual_memory()._asdict()
+    profiling_data['dataset'] = index
+    profiling_data['total_dataset'] = len(data)
+    profiling_data['buffer_error'] = False
+    memory_profiling.append(profiling_data)
     producer.flush(10)
     time_taken = (datetime.utcnow()-time_now).total_seconds()
     actual_time_taken = time_taken-buffer_clear_time
@@ -130,19 +121,25 @@ def main():
             "overall_time_taken",
             "buffer_clear_time",
             "transfer_time_taken",
-            "overall_docs_per_second"
+            "overall_docs_per_second",
+            'dataset_size'
             ]
     with open("kafka_protobuf.csv", "a") as f:
         writer = csv.DictWriter(
             f, fieldnames=header)
         writer = csv.DictWriter(
         f, fieldnames=header)
-        import os
-        if not os.path.isfile("kafka_protobuf.csv"):
-            writer.writeheader() 
+        # writer.writeheader() 
         writer.writerow(csv_data)
 
-
+    with open('./protobuf/memory_profiling.csv', "a") as f:
+            new_header = memory_profiling[0].keys()
+            writer = csv.DictWriter(
+                f, fieldnames=new_header)
+            writer = csv.DictWriter(
+            f, fieldnames=new_header)
+            # writer.writeheader() 
+            writer.writerows(memory_profiling)
 
 if __name__ == '__main__':
 
